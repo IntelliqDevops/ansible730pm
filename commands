@@ -7,3 +7,6 @@
 7 uri (url,status_code)
 8 get_url (url,dest)
 9 replace (regexp,replace,path)
+10 git (repo,dest)
+11 copy (src,dest,content,mode,owner,group)
+12 fetch (src,dest)
