@@ -1,0 +1,22 @@
+---
+- name: Create users and copy passwd file into the users home dir and change persmissions
+  hosts: all
+  tasks:
+    - name: Create users
+      user:
+        name: Ravi
+        password: intelliqit
+        home: /tmp/Ravi
+    - name: Copy the /etc/passwd file
+      copy:
+        src: /etc/passwd
+        dest: /tmp/Ravi
+    - name: Change persmissions of the passwd file that we copied
+      file:
+        name: /tmp/Ravi/passwd
+        state: touch
+        mode: 750
+        owner: Ravi
+        group: root
+...
+
