@@ -1,0 +1,12 @@
+---
+- name: Implementing when conditions
+  hosts: all
+  vars:
+    a: 20
+  tasks:
+    - name: Create users
+      user:
+        name: Harish
+        password: intelliqit
+      when: a == 10
+
